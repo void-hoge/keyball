@@ -22,8 +22,12 @@ def main():
         # cv2.imshow('video', clipped)
         frames.append(clipped)
     binframes = [np.where(frame == 255, 0, 1).astype(np.uint8) for frame in frames]
+    binframes[0][14][23] = 0
+    binframes[0][13][23] = 1
     binframes[1][11][22] = 1
     binframes[2][10][21] = 1
+    binframes[3][13][9] = 1
+    binframes[3][14][9] = 0
     binframes[4][13][9] = 1
     binframes[6][11][11] = 1
     binframes[7][13][23] = 1
