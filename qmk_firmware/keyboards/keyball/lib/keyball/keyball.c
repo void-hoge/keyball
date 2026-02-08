@@ -262,6 +262,13 @@ static inline bool should_report(void) {
         keyball.that_motion.y = 0;
     }
 #endif
+    if (layer_state_is(0)) {
+        keyball.this_motion.x = 0;
+        keyball.this_motion.y = 0;
+        keyball.that_motion.x = 0;
+        keyball.that_motion.y = 0;
+        return false;
+    }
     return true;
 }
 
